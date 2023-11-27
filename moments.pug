@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+    link(href="moments.css" rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    | <script id="client-script" src="client.js" config="#{config}"></script>
+    title Moments@Work
+
+  body
+
+    .screen#mturkid
+      h3 Please enter your Amazon Mechanical Turk Worker ID:
+      div
+        input(type="text", id="mtid")
+      .button#mturkid-button Click here to SUBMIT YOUR ID
+
+    .screen#consent
+      include consent
+
+    .screen#instructions
+      include instructions
+
+    .screen#game
+      include game
+
+    .screen#practiceover
+      .banner
+        h1 The Practice Rounds are Over
+        .button.enabled#startgame Click here to START THE GAME
+
+    .screen#over
+      .banner
+        h1 The Game is Over
+        h2#final-winners
+        h2#your-final-score Your (Player-1’s) final score was <span class="final-score"></span> point<span class="plural"></span>.
+        .button.enabled#gamefinished Click here to PROCEED
+
+    include questionnaires
+
+    .screen#demographics
+      include demographics
+
+    .screen#completion
+      .banner
+        h1 Thank you for participating
+        h2#completion-code Please use completion code <span></span> to claim your payment
+
+    .screen#exit
+      .banner
+        h1.highlight#errormsg

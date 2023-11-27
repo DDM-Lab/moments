@@ -1,0 +1,346 @@
+body {
+
+    font-size: 14pt;
+    max-width: 60em;
+    margin: 3ex 2em;
+    line-height: 120%;
+    background-color: white;
+}
+
+.screen {
+    display: none;
+}
+
+h1, h3, .banner {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.center {
+    text-align: center;
+}
+
+img#ui {
+    display: block;
+    width: 56em;
+    margin-left: 1em;
+    margin-bottom: 4ex;
+}
+
+img#ibtn {
+    vertical-align: middle;
+    height: 3.5ex;
+}
+
+.screen#instructions {
+    font-size: 108%;
+    line-height: 130%;
+}
+
+input#age {
+    display: block;
+    margin-top: 1.5ex;
+    margin-left: 1.5em;
+}
+
+.banner h1 {
+    margin-top: 10ex;
+    margin-bottom: 5ex;
+    line-height: 140%;
+}
+
+#round {
+    font-size: 110%;
+    font-weight: bold;
+    Padding-top: 2ex;
+}
+
+#opponents {
+    display: flex;
+    justify-content: space-around;
+}
+
+#reaction-frame {
+    border: 2px solid black;
+    padding: 0.5em;
+    min-width: 58em;
+}
+
+#reactions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 2ex 1em;
+}
+
+.card {
+    flex: none;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 0.6em;
+    width: 6.5em;
+    height: 19ex;
+    margin: 1ex 0.4em;
+}
+
+.opponent {
+    flex: none;
+    width: 16em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1em;
+}
+
+.opponent .decider {
+    grid-column-start: span 2;
+    text-align: center;
+}
+
+.player-label {
+    margin-right: 1.4em;
+}
+
+.opponent .points-label {
+    margin-left: 0.5em;
+}
+
+.player-label, .opponent .points-label {
+    margin-top: 0.5ex;
+}
+
+.highlight {
+    color: red;
+}
+
+.card {
+    background-color: #1F4E79;
+    color: white;
+    font-size: 90%;
+    line-height: 130%;
+}
+
+.card.front {
+    background-color: #00B0F0;
+}
+
+.card#moment, .card.moment {
+    color: black;
+    background-color: #FFC000;
+    width: 14em;
+    height: 28ex;
+}
+
+.audit-space {
+    margin-top: 10ex;
+}
+
+.star {
+    font-size: 150%;
+    color: #FFC000;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.player-label, #moment-label, .reaction-label {
+    text-align: center;
+    margin-bottom: 0.5ex;
+}
+
+.reaction-label {
+    font-weight: bold;
+}
+
+#self {
+    width: 25em;
+    margin-top: 4ex;
+    margin-left: 1em;
+    line-height: 140%;
+}
+
+#self-label {
+    display: flex;
+}
+
+#self-label div {
+    margin-right: 4em;
+}
+
+#select, #decision, #decide {
+    font-size: 90%;
+    line-height: 130%;
+    margin: 1ex 2em 1ex 1em;
+}
+
+#winner {
+    font-size: 111%;
+    margin-left: 10em;
+    margin-top: 0.5ex;
+    color: red;
+}
+
+.button {
+    display: inline-block;
+    float: right;
+    border: 2px solid;
+    padding: 0.2ex 0.5em;
+    margin-top: 1ex;
+    color: gray;
+    margin-bottom: 6ex;
+}
+
+.button.enabled {
+    color: black;
+}
+
+.selectable:hover, .button.enabled:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.button#mturkid-button, .button#startgame {
+    float: none;
+}
+
+#mturkid {
+    margin-top: 20ex;
+}
+
+#mturkid-button {
+    margin-top: 8ex;
+}
+
+#choices {
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+#choices .button {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.directions.inactive {
+    display: none !important;
+}
+
+.decider.inactive {
+    visibility: hidden !important;
+}
+
+#your-final-score, #completion-code {
+    display: none;
+}
+
+.screen#over h2 {
+    margin-bottom: 4ex;
+}
+
+#mturkid {
+    text-align: center;
+}
+
+.consent {
+    display: none;
+}
+
+#consent-questions {
+    margin-left: 2em;
+}
+
+#consent-questions h4 {
+    margin-bottom: 1ex;
+}
+
+.consent-warning {
+    display: none;
+    color: red;
+}
+
+.boolean-radio {
+    margin-left: 1em;
+}
+
+#exit {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.waiting {
+    cursor: wait !important;
+}
+
+
+
+.q1ratings-block, .emotion {
+    margin-left: 3em;
+    margin-bottom: 2ex;
+    display: grid;
+    grid-template-columns: 6em 5em repeat(5, 2.1em) 6em;
+    column-gap: 1.2em;
+}
+
+.minrating, .maxrating {
+    font-size: 80%;
+    color: gray;
+    font-style: italic;
+}
+
+.minrating {
+    text-align: right;
+    margin-right: 0.5em;
+}
+
+.maxrating {
+    margin-left: 0.5em;
+}
+
+
+
+
+.ratings, .rating-names {
+    display: flex;
+    justify-content: space-between;
+}
+
+.qradio {
+    flex: 1;
+}
+
+div.qradio:first-child {
+    margin-left: 1.4em;
+}
+
+.rating-block {
+    margin:  1ex 4%;
+}
+
+.qradio-label {
+    margin-left: 0.3em;
+}
+
+.player-behavior, .motivation {
+    margin-top: 3ex;
+}
+
+
+
+
+#submitquestionnaire1, #submitquestionnaire2, #submitquestionnaire3 {
+    margin-top: 8ex;
+}
+

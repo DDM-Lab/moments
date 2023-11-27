@@ -1,0 +1,40 @@
+mixin qratings10(name, low, high)
+  div.rating-block
+    .rating-names
+      div= low
+      div= high
+    .ratings
+      - for (let i = 1; i <= 10; ++i)
+        +qradio(name, i, i)
+
+mixin motivation(name, text)
+  .motivation(id=name)
+    div= text
+    +qratings10(name, "Strongly Disagree", "Strongly Agree")
+
+
+h3 Questionnaire 3
+
+p.bold.
+  The following questions concern various reasons or motivations people might have for
+  trying to respond in nonprejudiced ways. Some of the reasons reflect internal-personal
+  motivations whereas others reflect more external-social motivations. Neither type of
+  motivation is by definition better than the other. We are not evaluating you or your
+  individual responses, we only try to get an idea of the types of motivations that people
+  in general have for responding in nonprejudiced ways. It is important that you answer to
+  each of the questions openly and honestly. Please give your response according to the
+  scale below.
+
+.question-container
+  +motivation("pc_appear", "Because of today’s politically correct standards, I try to appear nonprejudiced toward minorities.")
+  +motivation("hide_neg", "I try to hide any negative thoughts about minorities in order to avoid negative reactions from others.")
+  +motivation("angry", "If I acted prejudiced toward minorities, I would be concerned that others would be angry with me.")
+  +motivation("disapproval", "I attempt to appear nonprejudiced toward minorities in order to avoid disapproval from others.")
+  +motivation("pressure", "I try to act nonprejudiced toward minorities because of pressure from others.")
+  +motivation("important", "I attempt to act in nonprejudiced ways toward minorities because it is personally important to me.")
+  +motivation("stereo_ok", "According to my personal values, using stereotypes about minorities is OK.")
+  +motivation("beliefs", "I am personally motivated by my beliefs to be nonprejudiced toward minorities.")
+  +motivation("stereo_wrong", "Because of my personal values, I believe that using stereotypes about minorities is wrong.")
+  +motivation("self_concept", "Being nonprejudiced toward minorities is important to my self-concept.")
+
+.button#submitquestionnaire3 Click here to SUBMIT YOUR ANSWERS

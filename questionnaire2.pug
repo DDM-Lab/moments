@@ -1,0 +1,37 @@
+mixin emotion(name)
+  .emotion(id=name)
+    .capitalize= name
+    .minrating Very slightly
+    - for (let i = 1; i <= 5; ++i)
+      +qradio(name, i, i)
+    .maxrating Extremely
+
+h3 Questionnaire 2
+
+p.bold.
+  Please read each item below and indicated to what extent you had these feelings
+  and emotions WHILE PLAYING THE GAME:
+
+.question-container
+  +emotion("interested")
+  +emotion("disinterested")
+  +emotion("excited")
+  +emotion("upset")
+  +emotion("strong")
+  +emotion("guilty")
+  +emotion("scared")
+  +emotion("hostile")
+  +emotion("enthusiastic")
+  +emotion("proud")
+  +emotion("irritable")
+  +emotion("alert")
+  +emotion("ashamed")
+  +emotion("inspired")
+  +emotion("nervous")
+  +emotion("determined")
+  +emotion("attentive")
+  +emotion("jittery")
+  +emotion("active")
+  +emotion("afraid")
+
+.button#submitquestionnaire2 Click here to SUBMIT YOUR ANSWERS

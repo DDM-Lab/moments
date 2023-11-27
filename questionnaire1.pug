@@ -1,0 +1,27 @@
+mixin q1rating(behavior, name)
+  div= behavior
+  .minrating Not at all
+  - for (let i = 1; i <= 5; ++i)
+    +qradio(name, i, i)
+  .maxrating Very much so
+
+mixin playerBehavior(possessive, nominative, name)
+  .player-behavior
+    p.underline= `${possessive} reactions and decisions (when ${nominative} was a Decider) were:`
+    .q1ratings-block
+      +q1rating("Offensive", name + "_off", 5)
+      +q1rating("Responsible", name + "_resp")
+      +q1rating("Humorous", name + "_hum")
+      +q1rating("Realistic", name + "_real")
+
+
+h3 Questionnaire 1
+
+p.bold Please rate the behavior of all of the other players in the game.
+
++playerBehavior("Player 2’s", "Player 2", "p2")
++playerBehavior("Player 3’s", "Player 3", "p3")
++playerBehavior("Player 4’s", "Player 4", "p4")
++playerBehavior("My own", "I", "p1")
+
+.button#submitquestionnaire1 Click here to SUBMIT YOUR ANSWERS

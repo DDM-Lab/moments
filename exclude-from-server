@@ -1,0 +1,12 @@
+design
+general-data
+node_modules
+archive
+package-lock.json
+copy-to-server.sh
+exclude-from-server
+.gitignore
+*.sqlite3*
+*_moments.csv
+*_reactions.csv
+*_values.csv

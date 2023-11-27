@@ -1,0 +1,14 @@
+mixin qradio(name, value, text)
+  .qradio
+    .center
+      input(type="radio", id=`${value}`, name=`${name}`, value=`${value}`)
+      label(for=`${value}`).qradio-label #{text}
+
+.screen#questionnaire1
+  include questionnaire1
+
+.screen#questionnaire2
+  include questionnaire2
+
+.screen#questionnaire3
+  include questionnaire3

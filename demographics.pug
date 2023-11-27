@@ -1,0 +1,79 @@
+mixin dradio(name, value, text)
+  div
+    input(type="radio", id=`${value}`, name=`${name}`, value=`${value}`)
+    label(for=`${value}`) #{text}
+
+mixin dcheck(value, text)
+  div
+    input(type="checkbox", id=`${value}`, name="race", value=`${value}`)
+    label(for=`${value}`) #{text}
+
+
+h3 Questionnaire 4
+
+p.bold Please answer the following demographic questions.
+
+p What is your gender?
+  +dradio("gender", "woman", "Woman")
+  +dradio("gender", "man", "Man")
+  +dradio("gender", "other", "Other")
+
+p What is your age?
+  input(type="number", min="18", max="90", placeholder="Age")#age
+
+p What is the highest level of education you have completed?
+  +dradio("education", "no-high-school", "Less than high school")
+  +dradio("education", "some-high-school", "Some high school")
+  +dradio("education", "high-school", "High school")
+  +dradio("education", "some-college", "Some college")
+  +dradio("education", "associate", "Associate’s degree")
+  +dradio("education", "bachelor", "Bachelor’s degree")
+  +dradio("education", "master", "Master’s degree")
+  +dradio("education", "professional", "Professional or doctoral degree")
+
+p How would you describe your political views?
+  +dradio("politics", "very-conservative", "Very conservative")
+  +dradio("politics", "conservative", "Conservative")
+  +dradio("politics", "moderate", "Moderate")
+  +dradio("politics", "liberal", "Liberal")
+  +dradio("politics", "very-liberal", "Very liberal")
+  +dradio("politics", "no-answer", "I prefer not to answer")
+  +dradio("politics", "undecided", "Undecided")
+
+p What religious views do you most strongly support and/or identify with?
+  +dradio("religion", "christianity", "Christianity")
+  +dradio("religion", "islam", "Islam")
+  +dradio("religion", "judaism", "Judaism")
+  +dradio("religion", "atheism", "Agnosticism/Atheism")
+  +dradio("religion", "buddhism", "Buddhism")
+  +dradio("religion", "hinduism", "Hinduism")
+  +dradio("religion", "taoism", "Taoism")
+  +dradio("religion", "other", "Other")
+  +dradio("religion", "no-answer", "I prefer not to answer")
+  +dradio("religion", "undecided", "Undecided")
+
+p What is your race? Please check all that apply.
+  +dcheck("white", "White")
+  +dcheck("black", "Black or African")
+  +dcheck("american-indian", "American Indian or Alaska Native")
+  +dcheck("asian", "Asian")
+  +dcheck("hawaiian", "Native Hawaiian or Pacific Islander")
+  +dcheck("other", "Other")
+
+p Are Hispanic or Latino?
+  +dradio("hispanic", "1", "Yes, I am Hispanic or Latino")
+  +dradio("hispanic", "0", "No, I am not Hispanic or Latino")
+
+p In what region of the United States do you currently reside?
+  +dradio("region", "pacific", "Pacific (Alaska, California, Hawaii, Oregon, Washington)")
+  +dradio("region", "mountain", "Mountain (Arizona, Colorado, Idaho, Montana, Nevada, New Mexico, Utah, Wyoming)")
+  +dradio("region", "west-south-central", "West South Central (Arkansas, Louisiana, Oklahoma, Texas)")
+  +dradio("region", "east-south-central", "East South Central (Alabama, Kentucky, Mississippi, Tennessee)")
+  +dradio("region", "south-atlantic", "South Atlantic (Delaware, Florida, Georgia, Maryland, North Carolina, South Carolina,")
+  +dradio("region", "west-north-central", "West North Central (Iowa, Kansas, Minnesota, Missouri, Nebraska, North Dakota, South Dakota)")
+  +dradio("region", "east-north-central", "East North Central (Illinois, Indiana, Michigan, Ohio, Wisconsin)")
+  +dradio("region", "mid-atlantic", "Mid-Atlantic (New Jersey, New York, Pennsylvania)")
+  +dradio("region", "new-england", "New England (Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, Vermont)")
+  +dradio("region", "other", "Other")
+
+.button#submitdemographics Click here to SUBMIT YOUR ANSWERS

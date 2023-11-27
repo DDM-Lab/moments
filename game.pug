@@ -1,0 +1,53 @@
+mixin decider
+  .decider.inactive <span class="star">&#9733;</span> DECIDER
+
+mixin opponent(i)
+  .opponent(id=`opponent-${i}`)
+    +decider
+    .player-label Player #{i}
+    .points-label Total Points: <span class="points">0</span>
+    .card(id=`choose-${i}`)
+
+
+
+
+#controls
+  #round <span id="practice">Practice </span>Round: <span id="round-num">1</span>
+  div
+    #moment-label Moment
+    .card#moment
+      #moment-text
+  #self
+    #self-label
+        div You are: Player 1
+        +decider
+    .points-label Your Total Points: <span class="points">0</span>
+    .directions.inactive#select.
+      Please select one of your reaction cards, that represents your best reaction
+      to the moment and submit it to the Decider.
+    .directions.inactive#decision
+      div The Decider received three reaction cards and the winner is:
+      #winner PLAYER <span id="winner-number">1</span>
+    .directions.inactive#decide.
+      You are the decider. The other three players have submitted the reaction cards that
+      you see above for this particular moment.</br>
+      Select the player’s card that you think is the BEST reaction for this moment.
+
+#reaction-frame
+  .reaction-label YOUR REACTION CARDS:
+  #reactions
+    .card
+    .card
+    .card
+    .card
+    .card
+    .card
+    .card
+
+#opponents
+  +opponent(2)
+  +opponent(3)
+  +opponent(4)
+
+.directions.inactive.button.enabled#submit Click here to SUBMIT your reaction card to the Decider
+.directions.inactive.button.enabled#next Click here to go to the NEXT ROUND

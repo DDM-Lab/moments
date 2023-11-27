@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+import os
+import tempfile
+import subprocess
+import sys
+import urllib.parse
+
+DBPATH = "/home/dfm/moments/moments.sqlite3"
+TABLES = ("participants", "hands", "choices", "attention")
+
+def table2csv(dbname, table, destination):
+    subprocess.run(["sqlite3", dbname], universal_newlines=True, input=""".mode csv
+.headers on
+.timer off
+.output %s
+ select * from %s;""" % (destination, table))
+
+def main():
+    tablename = urllib.parse.parse_qs(os.environ["QUERY_STRING"])["table"][0]
+    print("Content-Type: text/plain; charset=utf-8")
+    print("Cache-Control: no-cache")
+    if tablename in TABLES:
+        with tempfile.TemporaryDirectory() as dir:
+            os.chdir(dir)
+            csvfile = tablename + ".csv"
+            table2csv(DBPATH, tablename, csvfile)
+            print('Content-Disposition: attachment; filename="%s"\n' % (csvfile,))
+            print()
+            sys.stdout.flush()
+            subprocess.run(["cat", csvfile])
+    else:
+        print()
+        print("Table %s unknown." % (tablename,))
+
+if __name__ == '__main__':
+    main()
