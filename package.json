@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "app-root-dir": "^1.0.2",
-    "better-sqlite3": "^5.0.1",
+    "better-sqlite3": "^13.0.3",
     "csv-parser": "^2.1.0",
     "csv-writer": "^1.2.0",
     "express": "^4.16.4",
