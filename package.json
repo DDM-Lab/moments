@@ -16,7 +16,7 @@
     "better-sqlite3": "^5.0.1",
     "csv-parser": "^2.1.0",
     "csv-writer": "^1.2.0",
-    "express": "^4.16.4",
+    "express": "^4.22.3",
     "path": "^0.12.7",
     "pick-random": "^2.0.0",
     "pug": "^2.0.3",
